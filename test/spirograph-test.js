@@ -5,14 +5,17 @@ describe("A test suite", function(){
 });
 
 var _spiro;
-    beforeEach(function(){
-        var _element = document.createElement('div')
-    _spiro = new SpiroGraph('body');
-});
-describe("The Spiroggraph should be a ble to be instatiated.", function(){
+var _element = document.createElement('div')
+_spiro = new SpiroGraph(_element);
+
+describe("The Spirograph should be a ble to be instatiated passing a DOM element as an argument.", function(){
 
     it("Should be instantiated", function(){
         expect(_spiro).not.toBe(null);
     })
-})
+});
+
+
+
+
 

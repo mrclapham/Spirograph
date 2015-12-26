@@ -12,6 +12,7 @@ window.requestAnimFrame = (function(){
 
 var SpiroGraph = function (targ, config){
     this.targ = targ;
+    console.log("THE TARG = ", targ);
     if(config){
         this.config = config;
     }
@@ -19,15 +20,33 @@ var SpiroGraph = function (targ, config){
 }
 // METHODS
 
-SpiroGraph.prototype._parseTagetElement = function(value){
-    if(typeof value === 'string'){
+SpiroGraph.prototype.getDomElement = function(){
+    var _domElement = null;
+    console.log("GET DOM ELEMENT this.targ = ", this.targ);
+
+    if(typeof this.targ === 'string'){
         console.log("The target is a String...");
+        try{
+            _domElement = document.querySelector(this.targ);
+           // console.log(" _domElement ", _domElement)
+        }catch(err){
+            console.log("Error");
+        }
     }
-    if()
+    if(typeof this.targ.innerHTML && typeof this.targ.innerHTML === "string"){
+        console.log("YES I AM A DOM ELEMENT...");
+        _domElement = this.targ;
+    }
+
+    return _domElement;
 }
 
 SpiroGraph.prototype.init = function(){
-    this._targetDomElement = this._parseTagetElement(this.targ);
+    console.log('This targ = ', this.targ);
+    var _domElement = this.getDomElement()
+
+    console.log("_domElement ", _domElement)
+
     this.width = 1000;
     this.height = 1000;
     this.centerX = 500;
@@ -38,10 +57,10 @@ SpiroGraph.prototype.init = function(){
     this.angle = 0;
     this._gearRatio1 = 0;
     this.increment = .5;
-    this.canvas = document.getElementById(this.targ).appendChild(this.makeCanvas(this.width, this.height));
-    this.canvasGiudes = document.getElementById(this.targ).appendChild(this.makeCanvas(this.width, this.height));
-    this.canvasLines = document.getElementById(this.targ).appendChild(this.makeCanvas(this.width, this.height, "linesCanv"));
-    this.guideThickness = .5
+    this.canvas = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height));
+    this.canvasGiudes = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height));
+    this.canvasLines = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height, "linesCanv"));
+    this.guideThickness = .5;
     this.ctx = this.canvas.getContext("2d");
     this.ctxGuides = this.canvasGiudes.getContext("2d");
     this.ctxLines = this.canvasLines.getContext("2d");
@@ -324,7 +343,6 @@ SpiroGraph.prototype.setGuideColourInner = function(value){
 }
 
 
-// module.exports = SpiroGraph;
 
 
 

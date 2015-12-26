@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-
+<h1>hello</h1>
 </body>
 </html>
 <script type="text/javascript" src="../src/Spirograph.js"></script>
@@ -13,6 +13,8 @@
 
     document.addEventListener("DOMContentLoaded", function(event) {
         console.log("DOM fully loaded and parsed");
-        var _spir = new SpiroGraph('body')
+        var _bod = document.querySelector('body');
+        var _spir0 = new SpiroGraph('body');
+//        var _spir2 = new SpiroGraph(_bod);
     });
 </script>
