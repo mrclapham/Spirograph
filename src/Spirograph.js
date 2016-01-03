@@ -124,7 +124,7 @@ SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angl
 
     var _this = this;
 
-    requestAnimFrame(function(){
+    window.requestAnimFrame(function(){
         if(_this.getPlaying() ){
             _this.draw.call(_this)
         }
@@ -206,7 +206,7 @@ SpiroGraph.prototype.draw = function(){
     if(_this.getPlaying()){
         _this.drawSpiro()
     }
-    requestAnimFrame(function(){_this.draw.call(_this)});
+    window.requestAnimFrame(function(){_this.draw.call(_this)});
 };
 
 SpiroGraph.prototype.onRadiiChanged = function(){
@@ -342,7 +342,4 @@ SpiroGraph.prototype.setGuideColourInner = function(value){
 //TODO: add check for the colour format.
 }
 
-
-
-
-
+module.exports = SpiroGraph;
