@@ -4,11 +4,12 @@
   "description": "A javaScript spirograph",
   "main": "src/SpirographNpm.js",
   "scripts": {
-    "test": "mocha test/*-test.js"
+    "test": "mocha test/*-test.js -w"
   },
   "author": "Graham Clapham",
   "license": "MIT",
   "devDependencies": {
+    "canvas": "^1.3.5",
     "chai": "^3.4.1",
     "jasmine": "^2.3.2",
     "jsdom": "^7.2.2",
@@ -18,6 +19,7 @@
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.6",
     "karma-safari-launcher": "^0.1.1",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "mocha-jsdom": "^1.0.0"
   }
 }

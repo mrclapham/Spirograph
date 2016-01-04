@@ -22,7 +22,7 @@ var SpiroGraph = function (targ, config){
 
 SpiroGraph.prototype.getDomElement = function(){
     var _domElement = null;
-    console.log("GET DOM ELEMENT this.targ = ", this.targ);
+    // console.log("GET DOM ELEMENT this.targ = ", this.targ);
 
     if(typeof this.targ === 'string'){
         console.log("The target is a String...");
@@ -88,8 +88,13 @@ SpiroGraph.prototype.init = function(){
     for(var prop in this.config){
         this[prop] = this.config[prop]
     }
+    //
 
-    this.drawSpiral(this.ctx , this.centerX, this.centerY, this.radius, .1)
+    this.ctx = this.canvas.getContext("2d")
+    console.log("CANVAS CONTEXT= " , this.ctx);
+
+
+    this.drawSpiral(this.ctx , this.centerX, this.centerY, this.radius, .1);
 }
 
 
@@ -124,7 +129,7 @@ SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angl
 
     var _this = this;
 
-    window.requestAnimFrame(function(){
+    requestAnimFrame(function(){
         if(_this.getPlaying() ){
             _this.draw.call(_this)
         }
@@ -133,9 +138,10 @@ SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angl
 };
 
 SpiroGraph.prototype.clear = function(ctx){
+  if(ctx){
     ctx.clearRect(0, 0, this.width, this.height);
     ctx.beginPath();
-
+  }
 };
 
 SpiroGraph.prototype.clearAll = function(){
@@ -206,7 +212,7 @@ SpiroGraph.prototype.draw = function(){
     if(_this.getPlaying()){
         _this.drawSpiro()
     }
-    window.requestAnimFrame(function(){_this.draw.call(_this)});
+    requestAnimFrame(function(){_this.draw.call(_this)});
 };
 
 SpiroGraph.prototype.onRadiiChanged = function(){
