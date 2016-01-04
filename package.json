@@ -4,7 +4,7 @@
   "description": "A javaScript spirograph",
   "main": "src/SpirographNpm.js",
   "scripts": {
-    "test": "mocha test/*-test.js -w"
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "author": "Graham Clapham",
   "license": "MIT",
@@ -15,9 +15,11 @@
     "jsdom": "^7.2.2",
     "karma": "^0.13.15",
     "karma-browserify": "^4.4.2",
-    "karma-chrome-launcher": "^0.2.1",
+    "karma-chrome-launcher": "^0.2.2",
     "karma-firefox-launcher": "^0.1.7",
+    "karma-ie-launcher": "^0.2.0",
     "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.2",
     "karma-safari-launcher": "^0.1.1",
     "mocha": "^2.3.4",
     "mocha-jsdom": "^1.0.0"
