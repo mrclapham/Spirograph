@@ -15,7 +15,6 @@
   "author": "Graham Clapham",
   "license": "MIT",
   "devDependencies": {
-    "canvas": "^1.3.5",
     "chai": "^3.4.1",
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
