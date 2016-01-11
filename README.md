@@ -1,12 +1,19 @@
 # Spirograph
 A JavaScript spirograph
 
-npm install -g karma-cli
+To run tests install the Karma command line interface as a global:
 
-npm install karma-jasmine karma-chrome-launcher --save-dev
+```
+$ npm install -g karma-cli
+```
 
+To contribute use [semantic-release](https://github.com/semantic-release/semantic-release) for commits:
 
-http://cairographics.org/ for canvas testing -- brew install cairo
+```
+$ npm install -g semantic-release-cli
+```
+To make semantic relese commits simpler use Commitizen:
 
-npm install -g semantic-release-cli
-
+```
+$ npm install -g commitizen
+```
