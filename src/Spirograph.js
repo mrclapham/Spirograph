@@ -256,10 +256,10 @@ SpiroGraph.checkColourValue = function(value){
     var _retValue = null
     if(value.constructor === Array){
         _retValue = "rgba(";
-        for(var item in value){
-            _retValue+=String(value[item])+","
+        for(var i=0;i<value.length-1; i++){
+            _retValue+=String(value[i])+","
         }
-        _retValue += ".5 )";
+        _retValue += value[value.length-1]+")";
     }
 
     if( typeof value === 'string'){
@@ -298,7 +298,7 @@ SpiroGraph.prototype.getRaduis2 = function(){
     return this.radius2;
 }
 //-----------
-SpiroGraph.prototype.xsetRaduis3 = function(value){
+SpiroGraph.prototype.setRaduis3 = function(value){
     this.radius3 = value;
     this.onRadiiChanged();
 }
@@ -314,7 +314,7 @@ SpiroGraph.prototype.getPlaying = function(){
 }
 
 SpiroGraph.prototype.setOuterColor = function(value){
-    this.mainColor = value;
+    this.mainColor = SpiroGraph.checkColourValue(value);
 //TODO: add check for the colour format.
 }
 
@@ -326,14 +326,18 @@ SpiroGraph.prototype.setOuterColor = function(value){
  this.guideColourInner = '#00FFFF'
 
  */
-SpiroGraph.prototype.setOuterColor = function(value){
-    this.mainColor = SpiroGraph.checkColourValue(value);
+SpiroGraph.prototype.getOuterColor = function(value){
+    return this.mainColor;
 //TODO: add check for the colour format.
 }
 
 SpiroGraph.prototype.setInnerColour = function(value){
     this.innerColour = SpiroGraph.checkColourValue(value);
-    console.log( SpiroGraph.checkColourValue(value) );
+//TODO: add check for the colour format.
+}
+
+SpiroGraph.prototype.getInnerColour = function(){
+    return this.innerColour;
 //TODO: add check for the colour format.
 }
 
@@ -342,6 +346,10 @@ SpiroGraph.prototype.setGuideColourOuter = function(value){
 //TODO: add check for the colour format.
 }
 
+SpiroGraph.prototype.getGuideColourOuter = function(value){
+    return this.guideColourOuter;
+//TODO: add check for the colour format.
+}
 
 SpiroGraph.prototype.setGuideColourInner = function(value){
     this.guideColourInner = SpiroGraph.checkColourValue(value);

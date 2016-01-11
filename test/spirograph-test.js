@@ -29,12 +29,43 @@ describe("Api setters should return the set values.", function(){
     delete _spiro;
   });
 
-  it("getRaduis should return the same valeu as setRaduis set.", function(){
+  it("getRaduis should return the same value as setRaduis set.", function(){
     _spiro.setRaduis(240);
     expect(_spiro.getRaduis()).toEqual(240);
   });
 
-})
+    it("getRaduis should return the same value as setRaduis set.", function(){
+        _spiro.setRaduis(120);
+        expect(_spiro.getRaduis()).toEqual(120);
+    });
+
+    it("getRaduis2 should return the same value as setRaduis2 set.", function(){
+        _spiro.setRaduis2(240);
+        expect(_spiro.getRaduis2()).toEqual(240);
+    });
+
+    it("getRaduis2 should return the same value as setRaduis2 set.", function(){
+        _spiro.setRaduis2(340);
+        expect(_spiro.getRaduis2()).toEqual(340);
+    });
+
+    it("getRaduis2 should return the same value as setRaduis2 set.", function(){
+        _spiro.setPlaying(true);
+        expect(_spiro.getPlaying()).toEqual(true);
+    });
+
+    it("getOuterColor should return the same value as setOuterColor set, if set as a String.", function(){
+        _spiro.setOuterColor('rgba(255,0,255,1)');
+        expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,1)');
+    });
+
+    it("getOuterColor should return an rgba string if setOuterColor is setas.", function(){
+        _spiro.setOuterColor([255,0,255,.5]);
+        expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,0.5)');
+    });
+
+
+});
 
 
 
