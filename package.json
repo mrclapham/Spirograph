@@ -2,7 +2,7 @@
   "name": "spirograph",
   "version": "0.0.0-semantically-released",
   "description": "A javaScript spirograph",
-  "main": "src/SpirographNpm.js",
+  "main": "src/Spirograph.js",
   "scripts": {
     "commit": "git-cz",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
