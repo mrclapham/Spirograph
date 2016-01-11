@@ -318,14 +318,6 @@ SpiroGraph.prototype.setOuterColor = function(value){
 //TODO: add check for the colour format.
 }
 
-/*
-
- this.mainColor = 'rgba(0,99,255,0.5)';
- this.innerColour = 'rgba(255,0,255,0.2)';
- this.guideColourOuter = '#FF00FF'
- this.guideColourInner = '#00FFFF'
-
- */
 SpiroGraph.prototype.getOuterColor = function(value){
     return this.mainColor;
 //TODO: add check for the colour format.
