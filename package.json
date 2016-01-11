@@ -4,7 +4,7 @@
   "description": "A javaScript spirograph",
   "main": "src/SpirographNpm.js",
   "scripts": {
-      "commit": "git-cz",
+    "commit": "git-cz",
     "test": "./node_modules/.bin/karma start --single-run --browsers Firefox",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -39,5 +39,4 @@
       "path": "node_modules/cz-conventional-changelog"
     }
   }
-
 }
