@@ -4,7 +4,7 @@
     "description": "A javaScript spirograph",
     "main": "src/SpirographNpm.js",
     "scripts": {
-        "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+        "test": "./node_modules/.bin/karma start --single-run --browsers Firefox"
     },
     "repository":{
         "type": "git",
