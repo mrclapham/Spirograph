@@ -4,7 +4,7 @@
   "description": "A javaScript spirograph",
   "main": "src/Spirograph.js",
   "scripts": {
-      "prebuild": "rm -rf dist mkdir dist",
+    "prebuild": "rm -rf dist mkdir dist",
     "build": "babel/ src/Spirograph.js -o dist/Spirograph.js",
     "commit": "git-cz",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
@@ -18,7 +18,6 @@
   "author": "Graham Clapham",
   "license": "MIT",
   "devDependencies": {
-    "babel": "6.3.26",
     "babel-cli": "6.4.0",
     "chai": "^3.4.1",
     "commitizen": "2.5.0",
