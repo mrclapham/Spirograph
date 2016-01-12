@@ -1,4 +1,3 @@
-var jsdom = require('mocha-jsdom');
 var SpiroGraph = require("../src/Spirograph")//  = require('../src/Spirograph') //fs.readFileSync('./src/Spirograph.js', "utf-8");
 
 describe("A suite", function() {
