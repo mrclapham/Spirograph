@@ -11,6 +11,9 @@ window.requestAnimFrame = (function(){
 
 
 var SpiroGraph = function (targ, config){
+
+    console.log("loaded ", this)
+
     this.targ = targ;
     if(config){
         this.config = config;
