@@ -12,7 +12,6 @@ window.requestAnimFrame = (function(){
 
 var SpiroGraph = function (targ, config){
     this.targ = targ;
-    console.log("THE TARG = ", targ);
     if(config){
         this.config = config;
     }
@@ -22,31 +21,21 @@ var SpiroGraph = function (targ, config){
 
 SpiroGraph.prototype.getDomElement = function(){
     var _domElement = null;
-    // console.log("GET DOM ELEMENT this.targ = ", this.targ);
-
     if(typeof this.targ === 'string'){
-        console.log("The target is a String...");
         try{
             _domElement = document.querySelector(this.targ);
-           // console.log(" _domElement ", _domElement)
         }catch(err){
-            console.log("Error");
+            throw new Error("Could not find DOM element ", this.targ);
         }
     }
     if(typeof this.targ.innerHTML && typeof this.targ.innerHTML === "string"){
-        console.log("YES I AM A DOM ELEMENT...");
         _domElement = this.targ;
     }
-
     return _domElement;
 }
 
 SpiroGraph.prototype.init = function(){
-    console.log('This targ = ', this.targ);
     var _domElement = this.getDomElement()
-
-    console.log("_domElement ", _domElement)
-
     this.width = 1000;
     this.height = 1000;
     this.centerX = 500;
@@ -68,14 +57,10 @@ SpiroGraph.prototype.init = function(){
     this.mainColor = 'rgba(0,99,255,0.5)';
     this.mainLineThickness = .5;
     this.mainOpacity = 0.5;
-
     this.innerColour = 'rgba(255,0,255,0.2)';
-
     this.guideColourOuter = '#FF00FF'
     this.guideColourInner = '#00FFFF'
-
     this.innerLineThickness = .25;
-
     this.showEndDots = false;
     this.currentAngle = 0;
     this.innerAngle = 0
@@ -89,14 +74,9 @@ SpiroGraph.prototype.init = function(){
         this[prop] = this.config[prop]
     }
     //
-
     this.ctx = this.canvas.getContext("2d")
-    console.log("CANVAS CONTEXT= " , this.ctx);
-
-
     this.drawSpiral(this.ctx , this.centerX, this.centerY, this.radius, .1);
-}
-
+};
 
 SpiroGraph.prototype.makeCanvas = function(width, height, opt_class){
     var canvas = document.createElement("canvas");
@@ -202,15 +182,14 @@ SpiroGraph.prototype.drawSpiro = function(){
     this.ctxLines.stroke();
     this.currentAngle += this.increment
     this.innerAngle -= this.increment
-
-}
+};
 
 SpiroGraph.prototype.draw = function(){
     var _this = this
     _this.plotPoints();
     _this.drawGuidePath();
     if(_this.getPlaying()){
-        _this.drawSpiro()
+        _this.drawSpiro();
     }
     requestAnimFrame(function(){_this.draw.call(_this)});
 };
@@ -249,7 +228,7 @@ SpiroGraph.circleToXY = function (centre, radius, angle){
     }
 
     return points;
-}
+};
 
 SpiroGraph.checkColourValue = function(value){
     // is it an array
@@ -267,7 +246,7 @@ SpiroGraph.checkColourValue = function(value){
     }
 
     return _retValue
-}
+};
 
 SpiroGraph.prototype.onPlayingChanged = function(){
 
@@ -289,34 +268,39 @@ SpiroGraph.prototype.setRaduis = function(value){
 SpiroGraph.prototype.getRaduis = function(){
     return this.radius;
 };
-
+/**
+ * The radius of the inner wheel of the Spirograph
+ * @param value
+ */
 SpiroGraph.prototype.setRaduis2 = function(value){
     this.radius2 = value;
     this.onRadiiChanged();
-}
+};
+
 SpiroGraph.prototype.getRaduis2 = function(){
     return this.radius2;
-}
-//-----------
+};
+
 SpiroGraph.prototype.setRaduis3 = function(value){
     this.radius3 = value;
     this.onRadiiChanged();
-}
+};
+
 SpiroGraph.prototype.getRaduis3 = function(){
     return this.radius3;
 }
 
 SpiroGraph.prototype.setPlaying = function(value){
     this._playing = value;
-}
+};
 SpiroGraph.prototype.getPlaying = function(){
     return this._playing;
-}
+};
 
 SpiroGraph.prototype.setOuterColor = function(value){
     this.mainColor = SpiroGraph.checkColourValue(value);
 //TODO: add check for the colour format.
-}
+};
 
 SpiroGraph.prototype.getOuterColor = function(value){
     return this.mainColor;
