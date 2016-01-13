@@ -118,7 +118,7 @@ SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angl
         }
     })
 
-};
+};git staus
 
 SpiroGraph.prototype.clear = function(ctx){
   if(ctx){
@@ -128,9 +128,9 @@ SpiroGraph.prototype.clear = function(ctx){
 };
 
 SpiroGraph.prototype.clearAll = function(){
-    this.clear(this.ctx)
-    this.clear(this.ctxGuides)
-    this.clear(this.ctxLines)
+    this.clear(this.ctx);
+    this.clear(this.ctxGuides);
+    this.clear(this.ctxLines);
 };
 
 SpiroGraph.prototype.drawGuidePath = function(){
@@ -139,7 +139,8 @@ SpiroGraph.prototype.drawGuidePath = function(){
     this.ctxGuides.lineWidth = 0.2;
     this.drawCircle(this.ctxGuides, this.centerX, this.centerY, this.radius , this.guideColourInner, true);
     this.drawCircle(this.ctxGuides, this._points.x, this._points.y, this.radius2 ,  this.guideColourOuter, true);
-    //var _tracerCircle = this.drawCircle(this.ctxGuides, this._points3.x, this._points3.y,3, '#00ffff', false);
+    //The little circle at the point where the image is drawing
+    var _tracerCircle = this.drawCircle(this.ctxGuides, this._points3.x, this._points3.y,3, '#00ffff', false);
 };
 
 SpiroGraph.prototype.plotPoints =function(){

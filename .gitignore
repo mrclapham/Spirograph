@@ -4,4 +4,5 @@ node_modules
 Spirograph.iml
 dist
 /demo/bundle.js
+/.swo
 npm-debug.log

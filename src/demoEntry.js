@@ -7,7 +7,8 @@ var _api = {
         width:100,
         height:100,
         radius:300,
-        radius2:200
+        radius2:200,
+        radius3:200
         };
 module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
@@ -20,6 +21,7 @@ module.exports = (function(){
 
         var setRadius = gui.add(_api, "radius").min(5).max(400).step(1);
         var setRadius2 = gui.add(_api, "radius2").min(5).max(400).step(1);
+        var setRadius3 = gui.add(_api, "radius3").min(-100).max(400).step(1);
 
 
         setRadius.onChange(function(value) {
@@ -28,6 +30,10 @@ module.exports = (function(){
 
         setRadius2.onChange(function(value) {
             _spiro.setRaduis2(value);
+        });
+
+        setRadius3.onChange(function(value) {
+            _spiro.setRaduis3(value);
         });
     });
 })();
