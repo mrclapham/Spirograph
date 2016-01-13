@@ -45,7 +45,7 @@ SpiroGraph.prototype.init = function(){
     this.centerY = 500;
     this.radius = 430;
     this.radius2 = 201;
-    this.radius3 = 54;
+    this.radius3 = 154;
     this.angle = 0;
     this._gearRatio1 = 0;
     this.increment = .5;
@@ -61,18 +61,18 @@ SpiroGraph.prototype.init = function(){
     this.mainLineThickness = .5;
     this.mainOpacity = 0.5;
     this.innerColour = 'rgba(255,0,255,0.2)';
-    this.guideColourOuter = '#FF00FF'
-    this.guideColourInner = '#00FFFF'
+    this.guideColourOuter = '#FF00FF';
+    this.guideColourInner = '#00FFFF';
     this.innerLineThickness = .25;
     this.showEndDots = false;
     this.currentAngle = 0;
-    this.innerAngle = 0
-    this.anmInterval = null
+    this.innerAngle = 0;
+    this.anmInterval = null;
     // the points
     this._points = [];
     this._points2 = [];
-    this._points3 = []
-    this._playing = true
+    this._points3 = [];
+    this._playing = true;
     for(var prop in this.config){
         this[prop] = this.config[prop]
     }
