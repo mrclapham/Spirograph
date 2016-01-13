@@ -118,7 +118,7 @@ SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angl
         }
     })
 
-};git staus
+};
 
 SpiroGraph.prototype.clear = function(ctx){
   if(ctx){
