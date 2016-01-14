@@ -16,7 +16,6 @@ module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
         var _targ = document.querySelector('#holder');
         var _spiro = new SpiroGraph(_targ);
-        var _spiro2 = new SpiroGraph(_targ);
 
         var gui = new dat.GUI();
         gui.add(_api, 'width');
