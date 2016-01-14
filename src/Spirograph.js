@@ -58,8 +58,8 @@ SpiroGraph.prototype.init = function(){
     this.mainLineThickness = .5;
     this.mainOpacity = 0.5;
     this.innerColour = 'rgba(255,0,255,0.2)';
-    this.guideColourOuter = '#FF00FF';
-    this.guideColourInner = '#00FFFF';
+    this.guideColourOuter = '#151515';
+    this.guideColourInner = '#000000';
     this.innerLineThickness = .25;
     this.showEndDots = false;
     this.currentAngle = 0;
@@ -151,9 +151,10 @@ SpiroGraph.prototype.drawSpiro = function(){
 // inner circle
     // The dot at the end of the radiating line
     if(!this.showEndDots){
-        this.drawCircle(this.ctx, this._points2.x, this._points2.y, 1, '#ff0000', false );
+        this.drawCircle(this.ctx, this._points2.x, this._points2.y,.5, '#ff0000', false );
     }else{
         this.ctx.globalCompositeOperation = "source-out";
+
     }
     // This draws the radiating lines fron the two dots - inner and outer
     this.ctx.moveTo(this._points3.x, this._points3.y);
@@ -171,7 +172,7 @@ SpiroGraph.prototype.drawSpiro = function(){
     ];
 
     //this.drawCircle(this.ctxLines, this._points3old.x, this._points3old.y, 2 , '#ffff00', true);
-    this.ctxLines.fillStyle = this.getOuterColor();
+    //this.ctxLines.fillStyle = this.getOuterColor();
     this.ctxLines.strokeStyle = this.getOuterColor();
     this.ctxLines.lineWidth =this.mainLineThickness ;
 

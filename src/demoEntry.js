@@ -9,12 +9,14 @@ var _api = {
         radius:300,
         radius2:200,
         radius3:200,
-        outerColor: "rgba(255,255,0,1)"
+        outerColor: "rgba(255,255,0,1)",
+        innerColour: "rgba(0,255,0,1)"
         };
 module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
         var _targ = document.querySelector('#holder');
         var _spiro = new SpiroGraph(_targ);
+        var _spiro2 = new SpiroGraph(_targ);
 
         var gui = new dat.GUI();
         gui.add(_api, 'width');
@@ -24,6 +26,7 @@ module.exports = (function(){
         var setRadius2 = gui.add(_api, "radius2").min(5).max(400).step(1);
         var setRadius3 = gui.add(_api, "radius3").min(-100).max(400).step(1);
         var setOuterColor = gui.addColor(_api, "outerColor");
+        var setInnerColour = gui.addColor(_api, "innerColour");
 
         setRadius.onChange(function(value) {
             _spiro.setRaduis(value);
@@ -38,8 +41,11 @@ module.exports = (function(){
         });
 
         setOuterColor.onChange(function(value) {
-            console.log(value);
             _spiro.setOuterColor(value);
+        });
+
+        setInnerColour.onChange(function(value) {
+            _spiro.setInnerColour(value);
         });
 
 
