@@ -58,9 +58,14 @@ describe("Api setters should return the set values.", function(){
         expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,1)');
     });
 
-    it("getOuterColor should return an rgba string if setOuterColor is setas.", function(){
+    it("getOuterColor should return an rgba string if setOuterColor is set as an Array.", function(){
         _spiro.setOuterColor([255,0,255,.5]);
         expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,0.5)');
+    });
+
+    it("getOuterColor should return an rgba string if setOuterColor is set as a hex string.", function(){
+        _spiro.setOuterColor("#ff0000");
+        expect(_spiro.getOuterColor()).toEqual('rgba(255,0,0,1)');
     });
 });
 
@@ -76,4 +81,11 @@ describe("The Spirograph should be a ble to be instatiated passing a String as a
         expect(_element2).not.toBe(null);
         expect( document.querySelector('#HolderDiv')).toBe(_element2);
     })
+});
+
+describe("Static functions", function(){
+    it("SpiroGraph.checkColourValue should return desired results", function(){
+        expect(SpiroGraph.checkColourValue("rgba(255,0,0,1)")).toEqual("rgba(255,0,0,1)");
+        expect(SpiroGraph.checkColourValue("#FF0000")).toEqual("rgba(255,0,0,1)");
+    });
 });

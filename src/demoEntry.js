@@ -8,7 +8,8 @@ var _api = {
         height:100,
         radius:300,
         radius2:200,
-        radius3:200
+        radius3:200,
+        outerColor: "rgba(255,255,0,1)"
         };
 module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
@@ -22,7 +23,7 @@ module.exports = (function(){
         var setRadius = gui.add(_api, "radius").min(5).max(400).step(1);
         var setRadius2 = gui.add(_api, "radius2").min(5).max(400).step(1);
         var setRadius3 = gui.add(_api, "radius3").min(-100).max(400).step(1);
-
+        var setOuterColor = gui.addColor(_api, "outerColor");
 
         setRadius.onChange(function(value) {
             _spiro.setRaduis(value);
@@ -35,6 +36,13 @@ module.exports = (function(){
         setRadius3.onChange(function(value) {
             _spiro.setRaduis3(value);
         });
+
+        setOuterColor.onChange(function(value) {
+            console.log(value);
+            _spiro.setOuterColor(value);
+        });
+
+
     });
 })();
 

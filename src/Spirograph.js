@@ -1,5 +1,5 @@
 // shim layer with setTimeout fallback
-
+var colourUtils = require("./utils/ColourUtils");
 window.requestAnimFrame = (function(){
     return  window.requestAnimationFrame       ||
         window.webkitRequestAnimationFrame ||
@@ -11,9 +11,6 @@ window.requestAnimFrame = (function(){
 
 
 var SpiroGraph = function (targ, config){
-
-    console.log("loaded ", this)
-
     this.targ = targ;
     if(config){
         this.config = config;
@@ -174,8 +171,8 @@ SpiroGraph.prototype.drawSpiro = function(){
     ];
 
     //this.drawCircle(this.ctxLines, this._points3old.x, this._points3old.y, 2 , '#ffff00', true);
-    this.ctxLines.fillStyle = "rgba(255, 255, 255, 0)";
-    this.ctxLines.strokeStyle = "rgba(255, 0, 255, 0.5)";
+    this.ctxLines.fillStyle = this.getOuterColor();
+    this.ctxLines.strokeStyle = this.getOuterColor();
     this.ctxLines.lineWidth =this.mainLineThickness ;
 
     this.ctxLines.lineTo(this._points3.x, this._points3.y);
@@ -188,7 +185,7 @@ SpiroGraph.prototype.drawSpiro = function(){
 };
 
 SpiroGraph.prototype.draw = function(){
-    var _this = this
+    var _this = this;
     _this.plotPoints();
     _this.drawGuidePath();
     if(_this.getPlaying()){
@@ -245,7 +242,7 @@ SpiroGraph.checkColourValue = function(value){
     }
 
     if( typeof value === 'string'){
-        _retValue =  value;
+        value.charAt(0) === "#" ? _retValue = colourUtils.hexToRgb(value) : _retValue = value;
     }
 
     return _retValue

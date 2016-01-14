@@ -4,7 +4,7 @@
   "description": "A javaScript spirograph",
   "main": "src/Spirograph.js",
   "scripts": {
-    "build": "browserify src/Spirograph.js -o dist/index.js && npm run build-demo",
+    "build": "rm -R dist && mkdir dist && browserify src/Spirograph.js -o dist/index.js && npm run build-demo",
     "build-demo": "browserify src/demoEntry.js -o demo/bundle.js",
     "commit": "git-cz",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
