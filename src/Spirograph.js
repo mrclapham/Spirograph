@@ -117,7 +117,6 @@ SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angl
             _this.draw.call(_this)
         }
     })
-
 };
 
 SpiroGraph.prototype.clear = function(ctx){
