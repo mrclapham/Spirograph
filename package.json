@@ -10,7 +10,7 @@
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "testChrome": "./node_modules/.bin/karma start --single-run --browsers Chrome",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-      "postinstall": "npm run build-demo",
+      "postinstall": "npm run build && npm run build-demo",
       "start": "node server.js"
   },
   "repository": {
