@@ -19,7 +19,7 @@
   },
   "author": "Graham Clapham",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "babel-cli": "6.4.0",
     "chai": "^3.4.1",
     "commitizen": "2.5.0",
