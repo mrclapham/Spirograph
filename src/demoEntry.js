@@ -1,7 +1,7 @@
 /**
  * Created by grahamclapham on 13/01/16.
  */
-var SpiroGraph = require("./SpiroGraph");
+var SpiroGraph = require("./SpiroGraph.js");
 var dat = require('dat-gui');
 var _api = {
         width:100,
