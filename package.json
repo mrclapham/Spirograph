@@ -20,6 +20,16 @@
   "author": "Graham Clapham",
   "license": "MIT",
   "dependencies": {
+
+    "browserify": "13.0.0"
+
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
     "babel-cli": "6.4.0",
     "chai": "^3.4.1",
     "commitizen": "2.5.0",
@@ -36,15 +46,6 @@
     "karma-phantomjs-launcher": "0.2.3",
     "karma-safari-launcher": "^0.1.1",
     "phantomjs": "1.9.19",
-    "semantic-release": "^4.3.5",
-    "browserify": "13.0.0"
-
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
-  },
-  "devDependencies": {
+    "semantic-release": "^4.3.5"
   }
 }
