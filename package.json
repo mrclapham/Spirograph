@@ -10,8 +10,8 @@
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "testChrome": "./node_modules/.bin/karma start --single-run --browsers Chrome",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "postinstall": "npm run build-demo",
-    "start": "node server.js"
+      "postinstall": "npm run build-demo",
+      "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,25 @@
   "author": "Graham Clapham",
   "license": "MIT",
   "dependencies": {
-    "dat-gui": "0.5.0",
-    "express": "4.13.3"
+    "babel-cli": "6.4.0",
+    "chai": "^3.4.1",
+    "commitizen": "2.5.0",
+    "cz-conventional-changelog": "1.1.5",
+    "jasmine": "^2.3.2",
+    "jsdocs": "^0.1.0",
+    "jsdom": "^7.2.2",
+    "karma": "^0.13.15",
+    "karma-browserify": "^4.4.2",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-ie-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "0.2.3",
+    "karma-safari-launcher": "^0.1.1",
+    "phantomjs": "1.9.19",
+    "semantic-release": "^4.3.5",
+    "browserify": "13.0.0"
+
   },
   "config": {
     "commitizen": {
@@ -29,6 +46,5 @@
     }
   },
   "devDependencies": {
-    "browserify": "13.0.0"
   }
 }
