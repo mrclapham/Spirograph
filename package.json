@@ -23,7 +23,8 @@
     "node": "5.0.0"
   },
   "dependencies": {
-    "browserify": "13.0.0"
+    "browserify": "13.0.0",
+    "babel-cli": "6.4.0"
   },
   "config": {
     "commitizen": {
@@ -31,7 +32,6 @@
     }
   },
   "devDependencies": {
-    "babel-cli": "6.4.0",
     "chai": "^3.4.1",
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
