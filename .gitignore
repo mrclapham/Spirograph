@@ -3,5 +3,6 @@ node_modules
 .swp
 Spirograph.iml
 dist
+/src/SrcBundle.js
 /.swo
 npm-debug.log
