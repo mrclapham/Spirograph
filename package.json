@@ -19,10 +19,11 @@
   },
   "author": "Graham Clapham",
   "license": "MIT",
+  "engines": {
+    "node": "5.0.0"
+  },
   "dependencies": {
-
     "browserify": "13.0.0"
-
   },
   "config": {
     "commitizen": {
