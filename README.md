@@ -12,7 +12,7 @@ To contribute use [semantic-release](https://github.com/semantic-release/semanti
 ```
 $ npm install -g semantic-release-cli
 ```
-To make semantic relese commits simpler use Commitizen:
+To make semantic release commits simpler use Commitizen:
 
 ```
 $ npm install -g commitizen
