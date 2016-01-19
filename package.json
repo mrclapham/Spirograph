@@ -10,8 +10,8 @@
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "testChrome": "./node_modules/.bin/karma start --single-run --browsers Chrome",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-      "postinstall": "npm run build-demo",
-      "start": "node server.js"
+    "postinstall": "npm run build-demo",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,9 @@
     "node": "5.0.0"
   },
   "dependencies": {
+    "babel-cli": "6.4.0",
     "browserify": "13.0.0",
-    "babel-cli": "6.4.0"
+    "webpack": "1.12.11"
   },
   "config": {
     "commitizen": {
