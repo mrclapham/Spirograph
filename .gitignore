@@ -5,4 +5,5 @@ Spirograph.iml
 dist
 /src/SrcBundle.js
 /.swo
+/demo/wpBundle.js
 npm-debug.log
