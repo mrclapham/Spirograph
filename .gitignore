@@ -6,4 +6,5 @@ dist
 /src/SrcBundle.js
 /.swo
 /demo/wpBundle.js
+/demo/demo.js
 npm-debug.log
