@@ -1,5 +1,4 @@
 var _colourUtils = require("../src/utils/ColourUtils");
-console.log("Colour Utils ", _colourUtils)
 
 describe("ColourUtils", function() {
     it("contains spec with an expectation", function() {

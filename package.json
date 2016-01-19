@@ -4,8 +4,8 @@
   "description": "A javaScript spirograph",
   "main": "src/Spirograph.js",
   "scripts": {
-    "build": "rm -R dist && mkdir dist && browserify src/Spirograph.js -o dist/index.js && npm run build-demo",
-    "build-demo": "webpack",
+    "build": "rm -R dist && mkdir dist && browserify src/Spirograph.js -o dist/index.js",
+    "build-demo": "webpack --config demo.config.js",
     "commit": "git-cz",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "testChrome": "./node_modules/.bin/karma start --single-run --browsers Chrome",

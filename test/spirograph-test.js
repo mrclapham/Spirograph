@@ -74,7 +74,6 @@ describe("The Spirograph should be a ble to be instatiated passing a String as a
     _element2.setAttribute('id', 'HolderDiv');
     var _body = document.querySelector('body');
     _body.appendChild(_element2);
-    console.log("_element2 ",_element2);
     var _spiro2 = new SpiroGraph("#HolderDiv");
 
     it("Should be instantiated with a String for the DOM element ID.", function(){

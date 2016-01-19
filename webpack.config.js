@@ -1,9 +1,12 @@
 module.exports = {
-        entry: './src/demoEntry.js',
+        entry: './src/Spirograph.js',
         output: {
-            path: __dirname+"/demo",
-            filename: 'demo.js'
+            path: __dirname+"/dist",
+            filename: 'SpirographJs.js',
+            libraryTarget: 'umd',
+            library: 'Spirograph'
         },
+
         module: {
             loaders: [{
                 test: /\.jsx?$/,
