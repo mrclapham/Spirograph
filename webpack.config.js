@@ -2,7 +2,7 @@ module.exports = {
         entry: './src/Spirograph.js',
         output: {
             path: __dirname+"/dist",
-            filename: 'SpirographJs.js',
+            filename: 'Spirograph.js',
             libraryTarget: 'umd',
             library: 'Spirograph'
         },

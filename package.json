@@ -4,13 +4,14 @@
   "description": "A javaScript spirograph",
   "main": "src/Spirograph.js",
   "scripts": {
-    "build": "rm -R dist && mkdir dist && browserify src/Spirograph.js -o dist/index.js",
+    "build": "rm -R dist && mkdir dist && webpack --config webpack.config.js",
     "build-demo": "webpack --config demo.config.js",
+    "docs":"./node_modules/.bin/jsdoc src/Spirograph.js src/utils/ColourUtils.js -d jsdocs",
     "commit": "git-cz",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "testChrome": "./node_modules/.bin/karma start --single-run --browsers Chrome",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "postinstall": "npm run build-demo",
+    "postinstall": "npm run build-demo && npm run build",
     "start": "node server.js"
   },
   "repository": {
