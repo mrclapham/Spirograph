@@ -15,3 +15,4 @@ To run tests install the Karma command line interface as a global: ```$ npm inst
 To contribute use [semantic-release](https://github.com/semantic-release/semantic-release) for commits: ```$ npm install -g semantic-release-cli```
 
 To make semantic release commits simpler use Commitizen: ```$ npm install -g commitizen```
+
