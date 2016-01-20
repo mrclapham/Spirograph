@@ -1,7 +1,8 @@
 # Spirograph
 A JavaScript spirograph
 
-![Travis](https://img.shields.io/travis/mrClapham/Spirograph.svg)
+[![Build Status](your travis url for the repo here.png)](https://img.shields.io/travis/mrClapham/Spirograph.svg)
+
 
 To install via npm: ```$ npm install spirograph --save``` or simply use the compiled version in the dist folder, 'dist/SpirographJs.js'. 
 
