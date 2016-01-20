@@ -23,6 +23,8 @@
 * [SpiroGraph](#SpiroGraph)
     * [new SpiroGraph(targ, config)](#new_SpiroGraph_new)
     * _instance_
+        * [.setWidth(value)](#SpiroGraph+setWidth)
+        * [.getWidth()](#SpiroGraph+getWidth) ⇒ <code>number</code> &#124; <code>\*</code>
         * [.setRaduis(value)](#SpiroGraph+setRaduis)
         * [.getRaduis()](#SpiroGraph+getRaduis) ⇒ <code>number</code> &#124; <code>\*</code>
         * [.setRaduis2(value)](#SpiroGraph+setRaduis2)
@@ -40,6 +42,21 @@ Creates a new Spirograph
 | targ | 
 | config | 
 
+<a name="SpiroGraph+setWidth"></a>
+### spiroGraph.setWidth(value)
+Sets the overall width of the canvas DOM elements.
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+
+| Param |
+| --- |
+| value | 
+
+<a name="SpiroGraph+getWidth"></a>
+### spiroGraph.getWidth() ⇒ <code>number</code> &#124; <code>\*</code>
+Gets the width of the canvas DOM elements
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
 <a name="SpiroGraph+setRaduis"></a>
 ### spiroGraph.setRaduis(value)
 The overall radius of the whole image.
@@ -95,6 +112,8 @@ Created by grahamclapham on 13/01/16.
 * [SpiroGraph](#SpiroGraph)
     * [new SpiroGraph(targ, config)](#new_SpiroGraph_new)
     * _instance_
+        * [.setWidth(value)](#SpiroGraph+setWidth)
+        * [.getWidth()](#SpiroGraph+getWidth) ⇒ <code>number</code> &#124; <code>\*</code>
         * [.setRaduis(value)](#SpiroGraph+setRaduis)
         * [.getRaduis()](#SpiroGraph+getRaduis) ⇒ <code>number</code> &#124; <code>\*</code>
         * [.setRaduis2(value)](#SpiroGraph+setRaduis2)
@@ -112,6 +131,21 @@ Creates a new Spirograph
 | targ | 
 | config | 
 
+<a name="SpiroGraph+setWidth"></a>
+### spiroGraph.setWidth(value)
+Sets the overall width of the canvas DOM elements.
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+
+| Param |
+| --- |
+| value | 
+
+<a name="SpiroGraph+getWidth"></a>
+### spiroGraph.getWidth() ⇒ <code>number</code> &#124; <code>\*</code>
+Gets the width of the canvas DOM elements
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
 <a name="SpiroGraph+setRaduis"></a>
 ### spiroGraph.setRaduis(value)
 The overall radius of the whole image.

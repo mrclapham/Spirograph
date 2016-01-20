@@ -272,12 +272,18 @@ SpiroGraph.prototype.onPlayingChanged = function(){
 };
 
 // Methods
-
+/**
+ * Sets the overall width of the canvas DOM elements.
+ * @param value
+ */
 SpiroGraph.prototype.setWidth = function(value){
     this.width = value;
     onWidthHeightChanged.call(this);
 };
-
+/**
+ * Gets the width of the canvas DOM elements
+ * @returns {number|*}
+ */
 SpiroGraph.prototype.getWidth = function(){
 return this.width;
 };
