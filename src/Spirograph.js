@@ -1,5 +1,6 @@
 // shim layer with setTimeout fallback
 var colourUtils = require("./utils/ColourUtils");
+
 window.requestAnimFrame = (function(){
     return  window.requestAnimationFrame       ||
         window.webkitRequestAnimationFrame ||
@@ -47,8 +48,6 @@ SpiroGraph.prototype.init = function(){
     this._gearRatio1 = 0;
     this.increment = .5;
     this.guideThickness = .5;
-
-
     // colours
     this.mainColor = 'rgba(0,99,255,0.5)';
     this.mainLineThickness = .5;
@@ -89,7 +88,7 @@ SpiroGraph.prototype.makeCanvas = function(width, height, opt_class){
     canvas.style.left       = '0';
 
     return canvas
-}
+};
 
 SpiroGraph.prototype.drawCircle = function(ctx,x ,y,r, colour, border ){
     ctx.beginPath();
@@ -172,18 +171,16 @@ SpiroGraph.prototype.drawSpiro = function(){
         'lighter','darker','copy','xor'
     ];
 
-    //this.drawCircle(this.ctxLines, this._points3old.x, this._points3old.y, 2 , '#ffff00', true);
-    //this.ctxLines.fillStyle = this.getOuterColor();
     this.ctxLines.strokeStyle = this.getOuterColor();
     this.ctxLines.lineWidth =this.mainLineThickness ;
 
     this.ctxLines.lineTo(this._points3.x, this._points3.y);
 //    this.ctxLines.setLineWidth(1);
-    //globalCompositeOperation prevents the line becoming progressivly darker
+    //globalCompositeOperation prevents the line becoming progressively darker
     this.ctxLines.globalCompositeOperation = "source-out";
     this.ctxLines.stroke();
-    this.currentAngle += this.increment
-    this.innerAngle -= this.increment
+    this.currentAngle += this.increment;
+    this.innerAngle -= this.increment;
 };
 
 SpiroGraph.prototype.draw = function(){
@@ -195,10 +192,25 @@ SpiroGraph.prototype.draw = function(){
     }
     requestAnimFrame(function(){_this.draw.call(_this)});
 };
+// Callbacks on changes
+
+var onWidthHeightChanged = function onWidthHeightChanged(){
+    this.canvas.width = this.width;
+    this.canvas.height = this.height;
+
+    this.canvasGiudes.width = this.width;
+    this.canvasGiudes.height = this.height;
+
+    this.canvasLines.width = this.width;
+    this.canvasLines.height = this.height;
+};
+
 
 SpiroGraph.prototype.onRadiiChanged = function(){
     this.clearAll()
 };
+
+
 
 // STATIC FUNCTIONS
 
@@ -257,12 +269,22 @@ SpiroGraph.prototype.onPlayingChanged = function(){
 // Methods
 
 SpiroGraph.prototype.setWidth = function(value){
-    this.width = value
-}
+    this.width = value;
+    onWidthHeightChanged.call(this);
+};
 
 SpiroGraph.prototype.getWidth = function(){
-return this.width
-}
+return this.width;
+};
+
+SpiroGraph.prototype.setHeight = function(value){
+    this.height = value;
+    onWidthHeightChanged.call(this);
+};
+
+SpiroGraph.prototype.getHeight = function(){
+    return this.height;
+};
 
 /**
  * The overall radius of the whole image.
@@ -299,11 +321,12 @@ SpiroGraph.prototype.setRaduis3 = function(value){
 
 SpiroGraph.prototype.getRaduis3 = function(){
     return this.radius3;
-}
+};
 
 SpiroGraph.prototype.setPlaying = function(value){
     this._playing = value;
 };
+
 SpiroGraph.prototype.getPlaying = function(){
     return this._playing;
 };
@@ -316,31 +339,31 @@ SpiroGraph.prototype.setOuterColor = function(value){
 SpiroGraph.prototype.getOuterColor = function(value){
     return this.mainColor;
 //TODO: add check for the colour format.
-}
+};
 
 SpiroGraph.prototype.setInnerColour = function(value){
     this.innerColour = SpiroGraph.checkColourValue(value);
 //TODO: add check for the colour format.
-}
+};
 
 SpiroGraph.prototype.getInnerColour = function(){
     return this.innerColour;
 //TODO: add check for the colour format.
-}
+};
 
 SpiroGraph.prototype.setGuideColourOuter = function(value){
     this.guideColourOuter = SpiroGraph.checkColourValue(value);
 //TODO: add check for the colour format.
-}
+};
 
 SpiroGraph.prototype.getGuideColourOuter = function(value){
     return this.guideColourOuter;
 //TODO: add check for the colour format.
-}
+};
 
 SpiroGraph.prototype.setGuideColourInner = function(value){
     this.guideColourInner = SpiroGraph.checkColourValue(value);
 //TODO: add check for the colour format.
-}
+};
 
 module.exports = SpiroGraph;

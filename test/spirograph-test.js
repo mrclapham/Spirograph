@@ -100,11 +100,12 @@ describe("Resizing should recreate the canvas element.", function(){
         expect(_spiro3.getWidth()).toEqual(100)
     });
 
-    it("Should have a canvas element 100px wide and 150px high.", function(){
+    it("The three canvas Dom elements should be resizable via the API..", function(){
         var _canvasChildren = [].slice.call(_element3.children).filter(function(d,i){
             return d.nodeName.toLowerCase() === 'canvas'
         });
         expect(_canvasChildren.length).toEqual(3);
+
         _canvasChildren.map(function(dd,ii){
             expect(dd.width).toEqual(100);
         });
@@ -113,5 +114,16 @@ describe("Resizing should recreate the canvas element.", function(){
             expect(dd.height).toEqual(150);
         });
 
+        _spiro3.setWidth(400);
+        _spiro3.setHeight(650);
+
+        _canvasChildren.map(function(dd,ii){
+            expect(dd.width).toEqual(400);
+        });
+
+        _canvasChildren.map(function(dd,ii){
+            expect(dd.height).toEqual(650);
+        });
+
     })
-})
+});

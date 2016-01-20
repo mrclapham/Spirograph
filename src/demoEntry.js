@@ -10,7 +10,9 @@ var _api = {
         radius2:200,
         radius3:200,
         outerColor: "rgba(255,255,0,1)",
-        innerColour: "rgba(0,255,0,1)"
+        innerColour: "rgba(0,255,0,1)",
+        "width": 200,
+        "height": 200
         };
 module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
@@ -26,6 +28,8 @@ module.exports = (function(){
         var setRadius3 = gui.add(_api, "radius3").min(-100).max(400).step(1);
         var setOuterColor = gui.addColor(_api, "outerColor");
         var setInnerColour = gui.addColor(_api, "innerColour");
+        var setWidth= gui.add(_api, "width").min(100).max(600).step(10);;
+        var setHeight= gui.add(_api, "height").min(100).max(600).step(10);;
 
         setRadius.onChange(function(value) {
             _spiro.setRaduis(value);
@@ -47,6 +51,13 @@ module.exports = (function(){
             _spiro.setInnerColour(value);
         });
 
+        setWidth.onChange(function(value) {
+            _spiro.setWidth(value);
+        });
+
+        setHeight.onChange(function(value) {
+            _spiro.setHeight(value);
+        });
 
     });
 })();
