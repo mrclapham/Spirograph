@@ -10,6 +10,10 @@ If you pull the repository you will need to build the compiled version in dist. 
 
 There is a demo vesion which may be viewed at [https://gc-spirograph.herokuapp.com/](https://gc-spirograph.herokuapp.com/)
 
+**API Documentation
+
+Api Documentation may be found [here](https://github.com/mrClapham/Spirograph/blob/develop/api.md)
+
 --
 To run tests install the Karma command line interface as a global: ```$ npm install -g karma-cli``` then run via ```$ karma start```
 
