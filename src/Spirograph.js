@@ -46,13 +46,9 @@ SpiroGraph.prototype.init = function(){
     this.angle = 0;
     this._gearRatio1 = 0;
     this.increment = .5;
-    this.canvas = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height));
-    this.canvasGiudes = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height));
-    this.canvasLines = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height, "linesCanv"));
     this.guideThickness = .5;
-    this.ctx = this.canvas.getContext("2d");
-    this.ctxGuides = this.canvasGiudes.getContext("2d");
-    this.ctxLines = this.canvasLines.getContext("2d");
+
+
     // colours
     this.mainColor = 'rgba(0,99,255,0.5)';
     this.mainLineThickness = .5;
@@ -73,8 +69,13 @@ SpiroGraph.prototype.init = function(){
     for(var prop in this.config){
         this[prop] = this.config[prop]
     }
-    //
-    this.ctx = this.canvas.getContext("2d")
+    // make the canvas after the props have been passed from the config.
+    this.canvas = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height));
+    this.canvasGiudes = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height));
+    this.canvasLines = this.getDomElement().appendChild(this.makeCanvas(this.width, this.height, "linesCanv"));
+    this.ctx = this.canvas.getContext("2d");
+    this.ctxGuides = this.canvasGiudes.getContext("2d");
+    this.ctxLines = this.canvasLines.getContext("2d");
     this.drawSpiral(this.ctx , this.centerX, this.centerY, this.radius, .1);
 };
 
@@ -254,6 +255,15 @@ SpiroGraph.prototype.onPlayingChanged = function(){
 };
 
 // Methods
+
+SpiroGraph.prototype.setWidth = function(value){
+    this.width = value
+}
+
+SpiroGraph.prototype.getWidth = function(){
+return this.width
+}
+
 /**
  * The overall radius of the whole image.
  * @param value

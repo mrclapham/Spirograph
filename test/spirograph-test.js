@@ -88,3 +88,30 @@ describe("Static functions", function(){
         expect(SpiroGraph.checkColourValue("#FF0000")).toEqual("rgba(255,0,0,1)");
     });
 });
+
+describe("Resizing should recreate the canvas element.", function(){
+    var _element3 = document.createElement('div');
+    _element3.setAttribute('id', 'HolderDiv3');
+    var _body = document.querySelector('body');
+    _body.appendChild(_element3);
+    var _spiro3 = new SpiroGraph("#HolderDiv3", {width:100, height:150});
+
+    it("The Spirograph should have had its width and height set be the config oObject passed to it.", function(){
+        expect(_spiro3.getWidth()).toEqual(100)
+    });
+
+    it("Should have a canvas element 100px wide and 150px high.", function(){
+        var _canvasChildren = [].slice.call(_element3.children).filter(function(d,i){
+            return d.nodeName.toLowerCase() === 'canvas'
+        });
+        expect(_canvasChildren.length).toEqual(3);
+        _canvasChildren.map(function(dd,ii){
+            expect(dd.width).toEqual(100);
+        });
+
+        _canvasChildren.map(function(dd,ii){
+            expect(dd.height).toEqual(150);
+        });
+
+    })
+})
