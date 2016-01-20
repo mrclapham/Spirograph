@@ -4,7 +4,7 @@
   "description": "A javaScript spirograph",
   "main": "src/Spirograph.js",
   "scripts": {
-    "build": "rm -R dist && mkdir dist && webpack --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "build-demo": "webpack --config demo.config.js",
     "docs":"./node_modules/.bin/jsdoc src/Spirograph.js src/utils/ColourUtils.js -d jsdocs",
     "commit": "git-cz",
