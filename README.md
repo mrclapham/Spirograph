@@ -10,7 +10,7 @@ If you pull the repository you will need to build the compiled version in dist. 
 
 There is a demo vesion which may be viewed at [https://gc-spirograph.herokuapp.com/](https://gc-spirograph.herokuapp.com/)
 
-**API Documentation
+###API Documentation
 
 Api Documentation may be found [here](https://github.com/mrClapham/Spirograph/blob/develop/api.md)
 
