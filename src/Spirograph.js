@@ -377,4 +377,14 @@ SpiroGraph.prototype.setGuideColourInner = function(value){
 //TODO: add check for the colour format.
 };
 
+SpiroGraph.prototype.setGuideThickness = function(value){
+  if(!isNaN(value))this.guideThickness =   value;
+};
+
+SpiroGraph.prototype.getGuideThickness = function(value){
+    return this.guideThickness;
+};
+
+
+
 module.exports = SpiroGraph;

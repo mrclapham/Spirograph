@@ -53,6 +53,11 @@ describe("Api setters should return the set values.", function(){
         expect(_spiro.getPlaying()).toEqual(true);
     });
 
+    it("getGuideThickness should return the same value as getGuideThickness set.", function(){
+        _spiro.setGuideThickness(5);
+        expect(_spiro.getGuideThickness()).toEqual(5);
+    });
+
     it("getOuterColor should return the same value as setOuterColor set, if set as a String.", function(){
         _spiro.setOuterColor('rgba(255,0,255,1)');
         expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,1)');
@@ -67,6 +72,8 @@ describe("Api setters should return the set values.", function(){
         _spiro.setOuterColor("#ff0000");
         expect(_spiro.getOuterColor()).toEqual('rgba(255,0,0,1)');
     });
+
+
 });
 
 describe("The Spirograph should be a ble to be instatiated passing a String as an argument for the DOM element's ID.", function(){

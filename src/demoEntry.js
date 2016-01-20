@@ -4,15 +4,14 @@
 var SpiroGraph = require("./Spirograph.js");
 var dat = require('dat-gui');
 var _api = {
-        width:100,
-        height:100,
         radius:300,
         radius2:200,
         radius3:200,
         outerColor: "rgba(255,255,0,1)",
         innerColour: "rgba(0,255,0,1)",
-        "width": 200,
-        "height": 200
+        width: 200,
+        height: 200,
+        guideThickness: 1,
         };
 module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
@@ -20,16 +19,17 @@ module.exports = (function(){
         var _spiro = new SpiroGraph(_targ);
 
         var gui = new dat.GUI();
-        gui.add(_api, 'width');
-        gui.add(_api, 'height', -5);
+
+        var setWidth= gui.add(_api, "width").min(100).max(600).step(10);
+        var setHeight= gui.add(_api, "height").min(100).max(600).step(10);
+        var setGuideThickness= gui.add(_api, "guideThickness").min(.5).max(5).step(.5);
 
         var setRadius = gui.add(_api, "radius").min(5).max(400).step(1);
         var setRadius2 = gui.add(_api, "radius2").min(5).max(400).step(1);
         var setRadius3 = gui.add(_api, "radius3").min(-100).max(400).step(1);
         var setOuterColor = gui.addColor(_api, "outerColor");
         var setInnerColour = gui.addColor(_api, "innerColour");
-        var setWidth= gui.add(_api, "width").min(100).max(600).step(10);;
-        var setHeight= gui.add(_api, "height").min(100).max(600).step(10);;
+
 
         setRadius.onChange(function(value) {
             _spiro.setRaduis(value);
@@ -57,6 +57,10 @@ module.exports = (function(){
 
         setHeight.onChange(function(value) {
             _spiro.setHeight(value);
+        });
+
+        setGuideThickness.onChange(function(value) {
+            _spiro.setGuideThickness(value);
         });
 
     });
