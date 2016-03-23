@@ -386,6 +386,8 @@ SpiroGraph.prototype.getGuideThickness = function(value){
 };
 
 SpiroGraph.prototype.destroy = function(){
+    this.setPlaying(false);
+
     try {
         this.getDomElement().removeChild(this.canvas)
     }catch(e){
@@ -401,8 +403,9 @@ SpiroGraph.prototype.destroy = function(){
     }catch(e){
         //--
     }
-
-    return false;
+    var _this = this;
+    _this.prototype = {};
+    _this = {}
 };
 
 

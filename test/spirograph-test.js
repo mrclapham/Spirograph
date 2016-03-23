@@ -139,9 +139,20 @@ describe("The destroy method", function(){
     var _destroyDiv = document.createElement('div');
     var _spiroDestroy = new SpiroGraph(_destroyDiv);
     _spiroDestroy.destroy();
-    var _canvasChildren = [].slice.call(_destroyDiv.children)
+    var _canvasChildren = [].slice.call(_destroyDiv.children);
 
-    it("Should be able to be destroyed", function(){
+    it("Should have all dom elements removed from the target Div.", function(){
         expect(_canvasChildren.length).toEqual(0)
+    });
+
+    it("Instace should not be playing.", function(){
+        expect(_spiroDestroy.getPlaying()).toEqual(false)
+    });
+
+    it("Instace should destroyed totally be setting it to null.", function(){
+        _spiroDestroy = null
+        expect(_spiroDestroy).toBeNull();
     })
+
+
 });

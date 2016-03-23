@@ -17,7 +17,12 @@ module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
         var _targ = document.querySelector('#holder');
         var _spiro = new SpiroGraph(_targ);
-
+        document.querySelector("#destroy").addEventListener('click', function(e){
+            e.preventDefault();
+            console.log("Destroy called");
+            _spiro.destroy();
+            _spiro = null;
+        });
         var gui = new dat.GUI();
 
         var setWidth= gui.add(_api, "width").min(100).max(600).step(10);
