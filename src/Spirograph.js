@@ -405,6 +405,4 @@ SpiroGraph.prototype.destroy = function(){
     }
 };
 
-
-
 module.exports = SpiroGraph;
