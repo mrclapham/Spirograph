@@ -403,9 +403,6 @@ SpiroGraph.prototype.destroy = function(){
     }catch(e){
         //--
     }
-    var _this = this;
-    _this.prototype = {};
-    _this = {}
 };
 
 
