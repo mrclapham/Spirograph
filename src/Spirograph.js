@@ -385,6 +385,26 @@ SpiroGraph.prototype.getGuideThickness = function(value){
     return this.guideThickness;
 };
 
+SpiroGraph.prototype.destroy = function(){
+    try {
+        this.getDomElement().removeChild(this.canvas)
+    }catch(e){
+        //--
+    }
+    try {
+        this.getDomElement().removeChild(this.canvasGiudes)
+    }catch(e){
+        //--
+    }
+    try {
+        this.getDomElement().removeChild(this.canvasLines)
+    }catch(e){
+        //--
+    }
+
+    return false;
+};
+
 
 
 module.exports = SpiroGraph;

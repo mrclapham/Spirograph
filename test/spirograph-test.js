@@ -8,7 +8,7 @@ describe("A suite", function() {
 
 describe("The Spirograph should be able to be instatiated passing a DOM element as an argument.", function(){
     var _div = document.createElement('div')
-    var _spiro = new SpiroGraph(_div)
+    var _spiro = new SpiroGraph(_div);
     it("Should be instantiated", function(){
         expect(_spiro).not.toBe(null);
     })
@@ -132,5 +132,16 @@ describe("Resizing should recreate the canvas element.", function(){
             expect(dd.height).toEqual(650);
         });
 
+    })
+});
+
+describe("The destroy method", function(){
+    var _destroyDiv = document.createElement('div');
+    var _spiroDestroy = new SpiroGraph(_destroyDiv);
+    _spiroDestroy.destroy();
+    var _canvasChildren = [].slice.call(_destroyDiv.children)
+
+    it("Should be able to be destroyed", function(){
+        expect(_canvasChildren.length).toEqual(0)
     })
 });
