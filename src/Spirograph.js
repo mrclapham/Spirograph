@@ -189,8 +189,6 @@ SpiroGraph.prototype.drawSpiro = function(){
 };
 
 SpiroGraph.prototype.draw = function(){
-
-    console.log("Draw");
     var _this = this;
     if(!_this.getPlaying()) return;
 
@@ -344,7 +342,6 @@ SpiroGraph.prototype.getRaduis3 = function(){
 };
 
 SpiroGraph.prototype.setPlaying = function(value){
-    console.log();"Playing changed";
     this._playing = value;
     if(this._playing){
         this.draw.call(this);
