@@ -189,13 +189,22 @@ SpiroGraph.prototype.drawSpiro = function(){
 };
 
 SpiroGraph.prototype.draw = function(){
+
+    console.log("Draw");
     var _this = this;
-    _this.plotPoints();
-    _this.drawGuidePath();
-    if(_this.getPlaying()){
+    if(!_this.getPlaying()) return;
+
+        _this.plotPoints();
+        _this.drawGuidePath();
         _this.drawSpiro();
-    }
-    requestAnimFrame(function(){_this.draw.call(_this)});
+
+    requestAnimFrame(function() {
+        try {
+            _this.draw.call(_this);
+        } catch (err) {
+            //---
+        }
+    });
 };
 // Callbacks on changes
 
@@ -335,7 +344,11 @@ SpiroGraph.prototype.getRaduis3 = function(){
 };
 
 SpiroGraph.prototype.setPlaying = function(value){
+    console.log();"Playing changed";
     this._playing = value;
+    if(this._playing){
+        this.draw.call(this);
+    }
 };
 
 SpiroGraph.prototype.getPlaying = function(){
@@ -387,7 +400,7 @@ SpiroGraph.prototype.getGuideThickness = function(value){
 
 SpiroGraph.prototype.destroy = function(){
     this.setPlaying(false);
-
+    this.draw = null;
     try {
         this.getDomElement().removeChild(this.canvas)
     }catch(e){

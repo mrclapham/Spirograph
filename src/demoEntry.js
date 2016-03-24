@@ -17,12 +17,27 @@ module.exports = (function(){
     document.addEventListener("DOMContentLoaded", function(){
         var _targ = document.querySelector('#holder');
         var _spiro = new SpiroGraph(_targ);
+
         document.querySelector("#destroy").addEventListener('click', function(e){
             e.preventDefault();
             console.log("Destroy called");
             _spiro.destroy();
             _spiro = null;
         });
+
+        document.querySelector("#pause").addEventListener('click', function(e){
+            _spiro.setPlaying(false);
+
+        });
+
+        document.querySelector("#play").addEventListener('click', function(e){
+            _spiro.setPlaying(true);
+
+        });
+
+
+
+
         var gui = new dat.GUI();
 
         var setWidth= gui.add(_api, "width").min(100).max(600).step(10);
