@@ -105,7 +105,6 @@ SpiroGraph.prototype.drawCircle = function(ctx,x ,y,r, colour, border ){
 }
 
 SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angle){
-    console.log(" centerX ", this.getCentre().x)
     this.currentAngle = 0;
     var steps = 360/angle;
 
@@ -295,12 +294,18 @@ SpiroGraph.prototype.setWidth = function(value){
 SpiroGraph.prototype.getWidth = function(){
 return this.width;
 };
-
+/**
+ * Sets the height of the canvas elements.
+ * @param value
+ */
 SpiroGraph.prototype.setHeight = function(value){
     this.height = value;
     onWidthHeightChanged.call(this);
 };
-
+/**
+ * Returns the height of the canvas elements
+ * @returns {number|*}
+ */
 SpiroGraph.prototype.getHeight = function(){
     return this.height;
 };
@@ -364,54 +369,83 @@ SpiroGraph.prototype.setPlaying = function(value){
 SpiroGraph.prototype.getPlaying = function(){
     return this._playing;
 };
-
+/**
+ * Sets the colour of the dotted line around the outside
+ * @param value
+ */
 SpiroGraph.prototype.setOuterColor = function(value){
     this.mainColor = SpiroGraph.checkColourValue(value);
-//TODO: add check for the colour format.
 };
-
+/**
+ * Returns the outer colour of the drawing
+ * @param value
+ * @returns {*|string}
+ */
 SpiroGraph.prototype.getOuterColour = function(value){
     return this.mainColor;
-//TODO: add check for the colour format.
 };
-
+/**
+ * Sets the line in-fill colour of the drawing
+ * @param value
+ */
 SpiroGraph.prototype.setInnerColour = function(value){
     this.innerColour = SpiroGraph.checkColourValue(value);
-//TODO: add check for the colour format.
 };
-
+/**
+ * Returns the line in-fill colour of the drawing
+ * @returns {string|*}
+ */
 SpiroGraph.prototype.getInnerColour = function(){
     return this.innerColour;
-//TODO: add check for the colour format.
 };
-
+/**
+ * Sets the colour of the outer guide circles.
+ * @param value
+ */
 SpiroGraph.prototype.setGuideColourOuter = function(value){
     this.guideColourOuter = SpiroGraph.checkColourValue(value);
-//TODO: add check for the colour format.
 };
-
+/**
+ * Returns the colour of the outer guide circles.
+ * @param value
+ * @returns {*|string}
+ */
 SpiroGraph.prototype.getGuideColourOuter = function(value){
     return this.guideColourOuter;
-//TODO: add check for the colour format.
 };
-
+/**
+ * Sets the colour of the inner guide circles.
+ * @param value
+ */
 SpiroGraph.prototype.setGuideColourInner = function(value){
     this.guideColourInner = SpiroGraph.checkColourValue(value);
-//TODO: add check for the colour format.
 };
-
+/**
+ * Returns the colour of the inner guide circles.
+ * @param value
+ */
 SpiroGraph.prototype.setGuideThickness = function(value){
   if(!isNaN(value))this.guideThickness =   value;
 };
-
+/**
+ * Sets the thickness of the guide circles
+ * @param value
+ * @returns {number|*}
+ */
 SpiroGraph.prototype.getGuideThickness = function(value){
     return this.guideThickness;
 };
-
+/**
+ * Returns the centre point of the drawing - based on the width and height of the image.
+ * @returns {{x: number, y: number}}
+ */
 SpiroGraph.prototype.getCentre = function(){
     return {x: this.getWidth()/2, y: this.getHeight()/2};
 };
-
+/**
+ * Destroys the spirograph - including removing the canvas elements.
+ * It is recommended you set the instance to null after destroying so it is garbage collected.
+ */
 
 SpiroGraph.prototype.destroy = function(){
     this.setPlaying(false);
