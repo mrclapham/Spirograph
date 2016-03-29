@@ -58,21 +58,29 @@ describe("Api setters should return the set values.", function(){
         expect(_spiro.getGuideThickness()).toEqual(5);
     });
 
-    it("getOuterColor should return the same value as setOuterColor set, if set as a String.", function(){
+    it("getOuterColour should return the same value as setOuterColor set, if set as a String.", function(){
         _spiro.setOuterColor('rgba(255,0,255,1)');
-        expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,1)');
+        expect(_spiro.getOuterColour()).toEqual('rgba(255,0,255,1)');
     });
 
-    it("getOuterColor should return an rgba string if setOuterColor is set as an Array.", function(){
+    it("getOuterColour should return an rgba string if setOuterColor is set as an Array.", function(){
         _spiro.setOuterColor([255,0,255,.5]);
-        expect(_spiro.getOuterColor()).toEqual('rgba(255,0,255,0.5)');
+        expect(_spiro.getOuterColour()).toEqual('rgba(255,0,255,0.5)');
     });
 
-    it("getOuterColor should return an rgba string if setOuterColor is set as a hex string.", function(){
+    it("getOuterColour should return an rgba string if setOuterColor is set as a hex string.", function(){
         _spiro.setOuterColor("#ff0000");
-        expect(_spiro.getOuterColor()).toEqual('rgba(255,0,0,1)');
+        expect(_spiro.getOuterColour()).toEqual('rgba(255,0,0,1)');
     });
 
+    it("getCentre should return an object with an x and y property - x = half with, y = half height.", function(){
+        _spiro.setWidth(700);
+        _spiro.setHeight(900);
+        var _centre = _spiro.getCentre();
+        expect(_centre.x).toEqual(700/2);
+        expect(_centre.y).toEqual(900/2);
+
+    })
 
 });
 
@@ -153,6 +161,6 @@ describe("The destroy method", function(){
         _spiroDestroy = null
         expect(_spiroDestroy).toBeNull();
     })
-
-
 });
+
+

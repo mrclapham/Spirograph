@@ -80,7 +80,7 @@ SpiroGraph.prototype.init = function(){
     this.ctx = this.canvas.getContext("2d");
     this.ctxGuides = this.canvasGiudes.getContext("2d");
     this.ctxLines = this.canvasLines.getContext("2d");
-    this.drawSpiral(this.ctx , this.centerX, this.centerY, this.radius, .1);
+    this.drawSpiral(this.ctx , this.width/2, this.height/2, this.radius, .1);
 };
 
 SpiroGraph.prototype.makeCanvas = function(width, height, opt_class){
@@ -105,10 +105,11 @@ SpiroGraph.prototype.drawCircle = function(ctx,x ,y,r, colour, border ){
 }
 
 SpiroGraph.prototype.drawSpiral =  function (ctx, centerX, centerY, radius, angle){
+    console.log(" centerX ", this.getCentre().x)
     this.currentAngle = 0;
     var steps = 360/angle;
 
-    this._points = SpiroGraph.circleToXY({x:this.centerX, y:this.centerY}, this.radius,  this.currentAngle);
+    this._points = SpiroGraph.circleToXY({x:this.getCentre().x, y:this.getCentre().x}, this.radius,  this.currentAngle);
     this._points2 = SpiroGraph.circleToXY({x:this._points.x, y:this._points.y}, this.radius2,  this.currentAngle);
     this._points3 = SpiroGraph.circleToXY({x:this._points2.x, y:this._points2.y}, this.radius2,  this.currentAngle);
 
@@ -138,7 +139,7 @@ SpiroGraph.prototype.drawGuidePath = function(){
     this.clear(this.ctxGuides)
     //this.ctxGuides.setLineDash([2,6]);
     this.ctxGuides.lineWidth = 0.2;
-    this.drawCircle(this.ctxGuides, this.centerX, this.centerY, this.radius , this.guideColourInner, true);
+    this.drawCircle(this.ctxGuides, this.getCentre().x, this.getCentre().y, this.radius , this.guideColourInner, true);
     this.drawCircle(this.ctxGuides, this._points.x, this._points.y, this.radius2 ,  this.guideColourOuter, true);
     //The little circle at the point where the image is drawing
     var _tracerCircle = this.drawCircle(this.ctxGuides, this._points3.x, this._points3.y,3, '#00ffff', false);
@@ -146,7 +147,7 @@ SpiroGraph.prototype.drawGuidePath = function(){
 
 SpiroGraph.prototype.plotPoints =function(){
     this._gearRatio1 = (2 * Math.PI * this.radius-this.radius2) /  (2 * Math.PI * this.radius2);
-    this._points = SpiroGraph.circleToXY({x:this.centerX, y:this.centerY}, this.radius-this.radius2, this.currentAngle);
+    this._points = SpiroGraph.circleToXY({x:this.getCentre().x, y:this.getCentre().y}, this.radius-this.radius2, this.currentAngle);
     this._points2 = SpiroGraph.circleToXY({x:this._points.x, y:this._points.y}, this.radius2, this.innerAngle * this._gearRatio1);
     this._points3old = this._points3 ? this._points3 : {x:0, y:0}
     this._points3 = SpiroGraph.circleToXY({x:this._points2.x, y:this._points2.y}, -this.radius3, this.innerAngle * this._gearRatio1);
@@ -176,7 +177,7 @@ SpiroGraph.prototype.drawSpiro = function(){
         'lighter','darker','copy','xor'
     ];
 
-    this.ctxLines.strokeStyle = this.getOuterColor();
+    this.ctxLines.strokeStyle = this.getOuterColour();
     this.ctxLines.lineWidth =this.mainLineThickness ;
 
     this.ctxLines.lineTo(this._points3.x, this._points3.y);
@@ -357,7 +358,7 @@ SpiroGraph.prototype.setOuterColor = function(value){
 //TODO: add check for the colour format.
 };
 
-SpiroGraph.prototype.getOuterColor = function(value){
+SpiroGraph.prototype.getOuterColour = function(value){
     return this.mainColor;
 //TODO: add check for the colour format.
 };
@@ -394,6 +395,11 @@ SpiroGraph.prototype.setGuideThickness = function(value){
 SpiroGraph.prototype.getGuideThickness = function(value){
     return this.guideThickness;
 };
+
+SpiroGraph.prototype.getCentre = function(){
+    return {x: this.getWidth()/2, y: this.getHeight()/2};
+};
+
 
 SpiroGraph.prototype.destroy = function(){
     this.setPlaying(false);
