@@ -28,6 +28,10 @@
         * [.setRaduis(value)](#SpiroGraph+setRaduis)
         * [.getRaduis()](#SpiroGraph+getRaduis) ⇒ <code>number</code> &#124; <code>\*</code>
         * [.setRaduis2(value)](#SpiroGraph+setRaduis2)
+        * [.getRaduis2()](#SpiroGraph+getRaduis2) ⇒ <code>number</code> &#124; <code>\*</code>
+        * [.setRaduis3(value)](#SpiroGraph+setRaduis3)
+        * [.setPlaying(value)](#SpiroGraph+setPlaying)
+        * [.getPlaying()](#SpiroGraph+getPlaying) ⇒ <code>boolean</code> &#124; <code>\*</code>
     * _static_
         * [.toRadians(value)](#SpiroGraph.toRadians) ⇒ <code>number</code>
         * [.circleToXY(radius, angle)](#SpiroGraph.circleToXY)
@@ -82,6 +86,36 @@ The radius of the inner wheel of the Spirograph
 | --- |
 | value | 
 
+<a name="SpiroGraph+getRaduis2"></a>
+### spiroGraph.getRaduis2() ⇒ <code>number</code> &#124; <code>\*</code>
+The radius of the 'drawing' wheel - the inner wheel of the Spirograph
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+<a name="SpiroGraph+setRaduis3"></a>
+### spiroGraph.setRaduis3(value)
+The inset from the edge of the inner wheel - radus2 - this may be a negative value to give interesting results.
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+
+| Param |
+| --- |
+| value | 
+
+<a name="SpiroGraph+setPlaying"></a>
+### spiroGraph.setPlaying(value)
+Is the spirograph to animate
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+
+| Param |
+| --- |
+| value | 
+
+<a name="SpiroGraph+getPlaying"></a>
+### spiroGraph.getPlaying() ⇒ <code>boolean</code> &#124; <code>\*</code>
+Is the spirograph currently animating.
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
 <a name="SpiroGraph.toRadians"></a>
 ### SpiroGraph.toRadians(value) ⇒ <code>number</code>
 Convert degrees to radians
@@ -117,6 +151,10 @@ Created by grahamclapham on 13/01/16.
         * [.setRaduis(value)](#SpiroGraph+setRaduis)
         * [.getRaduis()](#SpiroGraph+getRaduis) ⇒ <code>number</code> &#124; <code>\*</code>
         * [.setRaduis2(value)](#SpiroGraph+setRaduis2)
+        * [.getRaduis2()](#SpiroGraph+getRaduis2) ⇒ <code>number</code> &#124; <code>\*</code>
+        * [.setRaduis3(value)](#SpiroGraph+setRaduis3)
+        * [.setPlaying(value)](#SpiroGraph+setPlaying)
+        * [.getPlaying()](#SpiroGraph+getPlaying) ⇒ <code>boolean</code> &#124; <code>\*</code>
     * _static_
         * [.toRadians(value)](#SpiroGraph.toRadians) ⇒ <code>number</code>
         * [.circleToXY(radius, angle)](#SpiroGraph.circleToXY)
@@ -171,6 +209,36 @@ The radius of the inner wheel of the Spirograph
 | --- |
 | value | 
 
+<a name="SpiroGraph+getRaduis2"></a>
+### spiroGraph.getRaduis2() ⇒ <code>number</code> &#124; <code>\*</code>
+The radius of the 'drawing' wheel - the inner wheel of the Spirograph
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+<a name="SpiroGraph+setRaduis3"></a>
+### spiroGraph.setRaduis3(value)
+The inset from the edge of the inner wheel - radus2 - this may be a negative value to give interesting results.
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+
+| Param |
+| --- |
+| value | 
+
+<a name="SpiroGraph+setPlaying"></a>
+### spiroGraph.setPlaying(value)
+Is the spirograph to animate
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
+
+| Param |
+| --- |
+| value | 
+
+<a name="SpiroGraph+getPlaying"></a>
+### spiroGraph.getPlaying() ⇒ <code>boolean</code> &#124; <code>\*</code>
+Is the spirograph currently animating.
+
+**Kind**: instance method of <code>[SpiroGraph](#SpiroGraph)</code>  
 <a name="SpiroGraph.toRadians"></a>
 ### SpiroGraph.toRadians(value) ⇒ <code>number</code>
 Convert degrees to radians

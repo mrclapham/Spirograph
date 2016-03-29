@@ -328,11 +328,17 @@ SpiroGraph.prototype.setRaduis2 = function(value){
     this.radius2 = value;
     this.onRadiiChanged();
 };
-
+/**
+ * The radius of the 'drawing' wheel - the inner wheel of the Spirograph
+ * @returns {number|*}
+ */
 SpiroGraph.prototype.getRaduis2 = function(){
     return this.radius2;
 };
-
+/**
+ * The inset from the edge of the inner wheel - radus2 - this may be a negative value to give interesting results.
+ * @param value
+ */
 SpiroGraph.prototype.setRaduis3 = function(value){
     this.radius3 = value;
     this.onRadiiChanged();
@@ -341,14 +347,20 @@ SpiroGraph.prototype.setRaduis3 = function(value){
 SpiroGraph.prototype.getRaduis3 = function(){
     return this.radius3;
 };
-
+/**
+ * Is the spirograph to animate
+ * @param value
+ */
 SpiroGraph.prototype.setPlaying = function(value){
     this._playing = value;
     if(this._playing){
         this.draw.call(this);
     }
 };
-
+/**
+ * Is the spirograph currently animating.
+ * @returns {boolean|*}
+ */
 SpiroGraph.prototype.getPlaying = function(){
     return this._playing;
 };
